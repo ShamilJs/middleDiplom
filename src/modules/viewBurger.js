@@ -6,6 +6,7 @@ const viewBurger = () => {
 
     const checkResponse = () => {
         const widthWindow = document.documentElement.clientWidth;
+        console.log('widthWindow: ', widthWindow);
 
         if (widthWindow < 768) {
             menuButton.addEventListener('click', () => {
@@ -18,22 +19,27 @@ const viewBurger = () => {
                         popupMenu.style.display = 'none';
                 }
             });
+
+
+            const topMenu = document.querySelector('.top-menu'),
+                head = document.querySelector('.head-slider');
+                
+            window.addEventListener('scroll', () => {
+                let topElem = head.getBoundingClientRect().top;
+                if (topElem <= 0) {
+                    topMenu.style.position = 'fixed';
+                } else {
+                    topMenu.style.position = 'relative';
+                }
+            });
+        } else {
+            return;
         }
     };
     checkResponse();
     window.addEventListener('resize', checkResponse);
 
-    const topMenu = document.querySelector('.top-menu'),
-        head = document.querySelector('.head-slider');
-    window.addEventListener('scroll', () => {
-        let topElem = head.getBoundingClientRect().top;
-        console.log('topElem: ', topElem);
-        if (topElem <= 0) {
-            topMenu.style.position = 'fixed';
-        } else {
-            topMenu.style.position = 'relative';
-        }
-    });
+    
 };
 
 
