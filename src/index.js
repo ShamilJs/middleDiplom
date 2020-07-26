@@ -27,14 +27,7 @@ sendForm();
 mainSlider('.main-slider', '.slide');
 mainSlider('.gallery-slider', '.slide');
 sliderCarousel();
-// const carousel = new sliderCarousel({ main: '#services > .wrapper',
-// 									wrap: '.services-slider',
-// 									prev: '#services > .wrapper >.services-slider > .prev',
-// 									next: '#services > .wrapper >.services-slider > .next',
-// 									slidesToShow: 5,
-// 									infinity: false,
-// 									});
-// carousel.init();
 viewBurger();
 windowScroll();
 calculator();
+
