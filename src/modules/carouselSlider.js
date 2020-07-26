@@ -26,7 +26,7 @@ const sliderCarousel = () => {
 		next.addEventListener('click', () => {
 			count ++;
 			if (slides.length -1 < show - 1 + count) {
-				count --;
+				count = 0;
 			}
 			render();
 		});
@@ -34,7 +34,7 @@ const sliderCarousel = () => {
 		left.addEventListener('click', () => {
 			count --;
 			if (count <= 0) {
-				count = 0;
+				count = show - 1 + count;
 			}
 			render();
 		});
